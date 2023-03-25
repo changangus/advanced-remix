@@ -46,7 +46,7 @@ You could also use the
 [`useSubmit`](https://remix.run/docs/en/v1/api/remix#usesubmit) hook to
 accomplish this:
 
-```ts
+```tsx
 const submit = useSubmit();
 useEffect(() => {
   if (isRead) {
