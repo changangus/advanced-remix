@@ -55,13 +55,10 @@ export default function CustomerRoute() {
       <div className="text-m-h3 font-bold leading-8">Invoices</div>
       <div className="h-4" />
       <Suspense fallback={<InvoiceDetailsFallback />}>
-        {/*
-        🐨 Wrap this in <Suspense><Await /></Suspense> components with:
-        - Suspense "fallback" prop should be <InvoiceDetailsFallback /> (imported from "~/components")
-        - Await "resolve" prop as data.invoiceDetails
-        - Await "errorElement" prop can be the ErrorFallback component (imported from "~/components")
-      */}
-        <Await errorElement={<ErrorFallback />} resolve={data.customerDetails}>
+        <Await
+          errorElement={<ErrorFallback message="Something go wrong" />}
+          resolve={data.customerDetails}
+        >
           {(customerDetails) => (
             <table className="w-full">
               <tbody>
